@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>커리큘럼 (초안)</title>
+<style>
+  :root{
+    --bg:#ffffff; --card:#f4f8f5; --line:#dbe6df; --text:#1d2a22; --sub:#5e6f65;
+    --green:#2f8f5b; --green-soft:#e1f2e8; --exam:#b7791f; --exam-soft:#fdf1d8;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#191919; --card:#232b26; --line:#34413a; --text:#ecf2ee; --sub:#9fb0a6;
+      --green:#58c38a; --green-soft:#1f3a2b; --exam:#e0b04a; --exam-soft:#3a3016;
+    }
+  }
+  *{box-sizing:border-box}
+  body{margin:0;padding:16px;background:var(--bg);color:var(--text);
+    font:15px/1.55 -apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic",sans-serif}
+  h1{font-size:18px;margin:0 0 2px}
+  .note{color:var(--sub);font-size:12.5px;margin:0 0 14px}
+  .badge{display:inline-block;background:var(--exam-soft);color:var(--exam);
+    border-radius:999px;padding:1px 9px;font-size:11.5px;font-weight:700;margin-left:6px;vertical-align:middle}
+
+  /* CSS-only tabs: 선택한 학년만 보임 */
+  input.tab{position:absolute;opacity:0;pointer-events:none}
+  .tabs{display:flex;gap:6px;margin-bottom:12px;flex-wrap:wrap}
+  .tabs label{cursor:pointer;padding:6px 16px;border-radius:999px;border:1px solid var(--line);
+    color:var(--sub);font-weight:600;font-size:14px;user-select:none}
+  #t1:checked ~ .tabs label[for=t1],
+  #t2:checked ~ .tabs label[for=t2],
+  #t3:checked ~ .tabs label[for=t3]{background:var(--green);border-color:var(--green);color:#fff}
+  .panel{display:none}
+  #t1:checked ~ #p1, #t2:checked ~ #p2, #t3:checked ~ #p3{display:block}
+
+  .intro{background:var(--card);border-left:4px solid var(--green);border-radius:8px;
+    padding:10px 14px;margin-bottom:12px;font-size:14px}
+  .intro b{color:var(--green)}
+
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:10px}
+  .m{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:10px 12px}
+  .m.exam{border-color:var(--exam);background:linear-gradient(0deg,var(--card),var(--card)),var(--exam-soft)}
+  .mon{font-weight:800;font-size:13px;color:var(--green);letter-spacing:.02em}
+  .title{font-weight:700;margin:2px 0 4px}
+  .m ul{margin:0;padding-left:17px;color:var(--sub);font-size:13px}
+  .tag{display:inline-block;margin-top:6px;background:var(--exam-soft);color:var(--exam);
+    font-size:11.5px;font-weight:700;border-radius:6px;padding:1px 7px}
+  .foot{margin-top:12px;color:var(--sub);font-size:12px}
+</style>
+</head>
+<body>
+
+<h1>한송이 고등국어 커리큘럼 <span class="badge">초안 · 예시 내용</span></h1>
+<p class="note">단원명·월별 배치는 예시입니다. 실제 교재와 진도에 맞춰 바꿔 주세요.</p>
+
+<input class="tab" type="radio" name="g" id="t1" checked>
+<input class="tab" type="radio" name="g" id="t2">
+<input class="tab" type="radio" name="g" id="t3">
+<div class="tabs">
+  <label for="t1">고1</label>
+  <label for="t2">고2</label>
+  <label for="t3">고3</label>
+</div>
+
+<!-- 고1 -->
+<section class="panel" id="p1">
+  <div class="intro"><b>고1 목표</b> · 독해 기본기와 문학 감상 틀 잡기, 어휘·문법 기초 다지기</div>
+  <div class="grid">
+    <div class="m"><div class="mon">3월</div><div class="title">비문학 독해 기초</div>
+      <ul><li>문단 구조 파악</li><li>핵심어·중심 문장</li></ul></div>
+    <div class="m"><div class="mon">4월</div><div class="title">현대시 감상</div>
+      <ul><li>화자·정서·표현</li><li>시험 범위 정리</li></ul></div>
+    <div class="m exam"><div class="mon">5월</div><div class="title">중간고사 대비</div>
+      <ul><li>학교별 기출 분석</li><li>범위 총정리</li></ul><span class="tag">중간고사</span></div>
+    <div class="m"><div class="mon">6월</div><div class="title">현대소설</div>
+      <ul><li>인물·갈등·시점</li><li>서술 방식</li></ul></div>
+    <div class="m exam"><div class="mon">7월</div><div class="title">기말고사 대비</div>
+      <ul><li>문법 총정리</li><li>모의 서술형</li></ul><span class="tag">기말고사</span></div>
+    <div class="m"><div class="mon">방학</div><div class="title">독서 + 문법 심화</div>
+      <ul><li>비문학 장문 훈련</li><li>음운·단어 갈래</li></ul></div>
+    <div class="m"><div class="mon">9월</div><div class="title">고전시가 · 고전소설</div>
+      <ul><li>갈래별 특징</li><li>어휘 풀이</li></ul></div>
+    <div class="m exam"><div class="mon">10월</div><div class="title">중간고사 대비</div>
+      <ul><li>기출 + 변형 문제</li></ul><span class="tag">중간고사</span></div>
+    <div class="m"><div class="mon">11월</div><div class="title">화법과 작문</div>
+      <ul><li>토론·발표 구조</li><li>글쓰기 개요 짜기</li></ul></div>
+    <div class="m exam"><div class="mon">12월</div><div class="title">기말고사 대비</div>
+      <ul><li>전 범위 복습</li></ul><span class="tag">기말고사</span></div>
+    <div class="m"><div class="mon">1~2월</div><div class="title">고2 선행</div>
+      <ul><li>문학 개념어</li><li>독서 지문 훈련</li></ul></div>
+  </div>
+</section>
+
+<!-- 고2 -->
+<section class="panel" id="p2">
+  <div class="intro"><b>고2 목표</b> · 문학·독서 심화, 수능형 지문 적응, 내신과 모의고사 병행</div>
+  <div class="grid">
+    <div class="m"><div class="mon">3월</div><div class="title">독서 (인문·사회)</div>
+      <ul><li>논지 전개 파악</li><li>3월 모의고사 분석</li></ul></div>
+    <div class="m"><div class="mon">4월</div><div class="title">현대문학 심화</div>
+      <ul><li>작품 간 비교</li><li>시험 범위 정리</li></ul></div>
+    <div class="m exam"><div class="mon">5월</div><div class="title">중간고사 대비</div>
+      <ul><li>학교별 기출</li><li>서술형 대비</li></ul><span class="tag">중간고사</span></div>
+    <div class="m"><div class="mon">6월</div><div class="title">독서 (과학·기술)</div>
+      <ul><li>개념 정의 정리</li><li>그림·표 연계</li></ul></div>
+    <div class="m exam"><div class="mon">7월</div><div class="title">기말고사 대비</div>
+      <ul><li>문법 총정리</li></ul><span class="tag">기말고사</span></div>
+    <div class="m"><div class="mon">방학</div><div class="title">고전문학 + 문법</div>
+      <ul><li>갈래별 작품 읽기</li><li>문법 요소 심화</li></ul></div>
+    <div class="m"><div class="mon">9월</div><div class="title">수능 연계 문학</div>
+      <ul><li>EBS 연계 작품</li></ul></div>
+    <div class="m exam"><div class="mon">10월</div><div class="title">중간고사 대비</div>
+      <ul><li>기출 + 변형</li></ul><span class="tag">중간고사</span></div>
+    <div class="m"><div class="mon">11월</div><div class="title">화법·작문 + 매체</div>
+      <ul><li>복합 지문</li></ul></div>
+    <div class="m exam"><div class="mon">12월</div><div class="title">기말고사 대비</div>
+      <ul><li>전 범위 복습</li></ul><span class="tag">기말고사</span></div>
+    <div class="m"><div class="mon">1~2월</div><div class="title">고3 선행 · 수능 개념</div>
+      <ul><li>독서 3대 유형</li><li>문학 빈출 개념</li></ul></div>
+  </div>
+</section>
+
+<!-- 고3 -->
+<section class="panel" id="p3">
+  <div class="intro"><b>고3 목표</b> · 수능 실전 감각, 약점 유형 보완, 시간 관리</div>
+  <div class="grid">
+    <div class="m"><div class="mon">3월</div><div class="title">수능 기출 1회독</div>
+      <ul><li>유형별 접근법</li><li>3월 모의고사</li></ul></div>
+    <div class="m"><div class="mon">4월</div><div class="title">독서 · 문학 심화</div>
+      <ul><li>고난도 지문</li></ul></div>
+    <div class="m exam"><div class="mon">5월</div><div class="title">중간고사 + 모의</div>
+      <ul><li>내신·수능 병행 계획</li></ul><span class="tag">중간고사</span></div>
+    <div class="m"><div class="mon">6월</div><div class="title">화법·작문·문법</div>
+      <ul><li>선택과목 영역 점검</li><li>6월 모의 분석</li></ul></div>
+    <div class="m exam"><div class="mon">7월</div><div class="title">기말고사 대비</div>
+      <ul><li>학교별 범위</li></ul><span class="tag">기말고사</span></div>
+    <div class="m"><div class="mon">방학</div><div class="title">약점 유형 집중</div>
+      <ul><li>오답 노트 재정리</li><li>실전 모의 주 2회</li></ul></div>
+    <div class="m"><div class="mon">9월</div><div class="title">수능 실전 + 연계</div>
+      <ul><li>9월 모의 분석</li></ul></div>
+    <div class="m"><div class="mon">10월</div><div class="title">파이널 모의고사</div>
+      <ul><li>시간 배분 훈련</li></ul></div>
+    <div class="m"><div class="mon">11월</div><div class="title">수능 직전 점검</div>
+      <ul><li>오답·개념 최종 정리</li></ul></div>
+  </div>
+</section>
+
+<p class="foot">※ 시험 일정은 각 학교 일정에 따라 달라질 수 있어요. 정확한 날짜는 위 캘린더의 "학교시험"을 확인하세요.</p>
+
+</body>
+</html>
